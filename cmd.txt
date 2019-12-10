@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+
+if [[ -d "./log" ]]; then
+    path='./log'
+else
+    path='./logs'
+fi
+
+if [[ -f "${path}/main.log" ]]; then
+    name='main.log'
+else
+    name='*.log'
+fi
+
+cmd="less -SR +F ${path}/${name}"
+${cmd}
